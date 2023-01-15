@@ -1,0 +1,12 @@
+/* Sizes */
+.small {
+	--spacing: var(--space-small);
+}
+
+.medium {
+	--spacing: var(--space-medium);
+}
+
+.large {
+	--spacing: var(--space-large);
+}

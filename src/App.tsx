@@ -6,9 +6,21 @@ import Button from './components/Button';
 const App: Component = () => {
 	return (
 		<div>
-			<Button class={styles.button} onPointerDown={(e) => console.log(e)}>
-				<span>first</span>
-				<span>second</span>
+			<Button class={styles.button} onClick={(e) => console.log(e)} size="small">
+				small text node
+			</Button>
+
+			<Button class={styles.button} onClick={(e) => console.log(e)} size="medium">
+				<span>child span</span>
+			</Button>
+
+			<Button class={styles.button} onClick={(e) => console.log(e)} size="large">
+				<span>child two</span>
+				<span>spans</span>
+			</Button>
+
+			<Button size="large" content="icon">
+				i
 			</Button>
 		</div>
 	);
