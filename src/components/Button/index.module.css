@@ -1,0 +1,10 @@
+.button {
+	display: flex;
+	gap: 4px;
+	padding: 4px 16px;
+	border: 2px solid black;
+}
+
+.button:hover {
+	cursor: pointer;
+}
