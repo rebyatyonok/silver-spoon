@@ -1,3 +1,31 @@
+:root {
+
+}
+
+.light-palette {
+	--black: oklch(0% 0 0);
+	--white: oklch(100% 0 0);
+	--rich-black: oklch(13.27% 0.018 255.28);
+	--baby-powder: oklch(99.34% 0.007 132.41);
+
+	--orange-red: oklch(69.17% 0.204 39.95);
+	--carolina-blue: oklch(65.83% 0.141 236.065);
+	--asparagus: oklch(69.73% 0.11 123.5);
+	--minion-yellow: oklch(87.4% 0.165 101.26);
+}
+
+.colors-to-functional {
+	--black: var(--black);
+	--white: var(--white);
+	--dark: var(--rich-black);
+	--light: var(--baby-powder);
+
+	--error: var(--orange-red);
+	--success: var(--asparagus);
+	--warning: var(--minion-yellow);
+	--accent: var(--carolina-blue);
+}
+
 /* Sizes */
 .small {
 	--spacing: var(--space-small);
