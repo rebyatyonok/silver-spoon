@@ -1,0 +1,56 @@
+.button {
+	--text-color: var(--white);
+
+	color: var(--text-color);
+	border: 2px solid var(--base-color);
+	border-radius: var(--spacing);
+	padding: var(--spacing) calc(var(--spacing) * 2);
+	transition: all 0.12s;
+}
+
+.button:hover {
+	cursor: pointer;
+	background: var(--hover-color);
+	border: 2px solid var(--hover-color);
+}
+
+.button:active {
+	background: var(--active-color);
+	border: 2px solid var(--active-color);
+}
+
+.button:disabled {
+	border-color: var(--hover-color);
+	background: var(--hover-color);
+	cursor: not-allowed;
+}
+
+
+/* Look */
+
+.filled {
+	background: var(--base-color);
+}
+
+.outline {
+	background: transparent;
+	border: 2px solid var(--base-color);
+}
+
+.ghost {
+	background: transparent;
+	border: none;
+}
+
+.ghost:hover {
+	background: var(--base-color);
+}
+
+
+/* Content */
+
+.mixed {
+	display: flex;
+	gap: var(--spacing);
+	align-items: center;
+}

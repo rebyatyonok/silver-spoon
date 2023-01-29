@@ -2,7 +2,7 @@
 import { render } from 'solid-js/web';
 
 import './index.css';
-import './assets/light-palette.css';
+import './assets/stripe-palette.css';
 import './assets/spacings.css';
 import App from './App';
 
