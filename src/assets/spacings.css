@@ -1,0 +1,8 @@
+:root {
+	--space: 2px;
+	--space-2: calc(var(--space) * 2);
+	--space-3: calc(var(--space) * 3);
+	--space-4: calc(var(--space) * 4);
+}
+
+
