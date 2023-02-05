@@ -1,0 +1,20 @@
+name: deps, run linters & ts
+run-name: deps, run linters & ts 🚀
+on: [push]
+jobs:
+  bun_install:
+    name: Install bun runtime
+    runs-on: ubuntu-latest
+    steps:
+      - uses: antongolub/action-setup-bun@v1
+      - run: bun --version
+      - run: which bun
+
+  install_dependencies:
+    name: Install package.json dependencies
+    needs: bun_install
+    runs-on: ubuntu-latest
+    steps:
+      - run: pwd
+      - run: bun install
+
