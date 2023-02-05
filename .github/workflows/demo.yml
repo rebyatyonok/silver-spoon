@@ -8,8 +8,7 @@ jobs:
     steps:
       - uses: antongolub/action-setup-bun@v1
       - run: bun --version
-        with:
-          cache: bun
+      - run: which bun
 
   install_dependencies:
     name: Install package.json dependencies
