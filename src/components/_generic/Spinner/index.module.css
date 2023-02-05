@@ -1,5 +1,5 @@
 .spinner {
-	animation: rotate 2s linear infinite;
+	/* animation: rotate 2s linear infinite; */
 	width: 0.9em;
 	height: 0.9em;
 }

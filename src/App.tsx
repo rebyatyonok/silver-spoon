@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 
-import styles from './App.module.css';
+import styles from "./app.module.css";
 import Button from './components/_generic/Button';
 
 const App: Component = () => {
