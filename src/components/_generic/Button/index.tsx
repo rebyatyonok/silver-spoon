@@ -1,5 +1,5 @@
 import { children, JSX, mergeProps, ParentComponent, splitProps } from 'solid-js';
-import { mergeClasses } from '../../../helpers/mergeClasses';
+import { mergeClasses } from '../../../helpers/merge-classes';
 import { sizeClasses } from '../../common';
 import Spinner from '../Spinner';
 
@@ -39,7 +39,7 @@ const defaultProps = {
 	color: 'gray',
 } satisfies Kit.Button.Props
 
-function getColorVarsString(color: typeof colors[number], hue: typeof hues[number] = 500) {
+function getColorVariablesString(color: typeof colors[number], hue: typeof hues[number] = 500) {
 	let hueIndex = hues.indexOf(hue);
 
 	// TODO: move checks into dev mode
@@ -51,10 +51,10 @@ function getColorVarsString(color: typeof colors[number], hue: typeof hues[numbe
 	let colorsToBuild = ['base', 'hover', 'active'];
 	let result = '';
 
-	for (let i = 0; i < colorsToBuild.length; i++) {
-		result += `--${colorsToBuild[i]}-color: var(--${color}-${hues[hueIndex]});`;
+	for (const element of colorsToBuild) {
+		result += `--${element}-color: var(--${color}-${hues[hueIndex]});`;
 
-		hueIndex = hueIndex === 0 ? 0 : hueIndex - 1;
+		hueIndex = hueIndex === hues.length ? hues.length - 1 : hueIndex + 1;
 	}
 
 	return result;
@@ -73,36 +73,36 @@ const Button: ParentComponent<Kit.Button.Props> = (props) => {
 	const mainContent = children(() => merged.children)
 
 	// TODO: enable customization of hue
-	const themeVars = getColorVarsString(styling.color)
+	const themeVariables = getColorVariablesString(styling.color)
 
 	let classes = mergeClasses(css.button, styling.class, variantClasses[styling.variant], sizeClasses[styling.size])
 
 	function getContent() {
-		let leftSlot;
-		let content;
-		let rightSlot;
+		let start;
+		let center;
+		let end;
 
 		if (loading.isLoading) {
 			if (loading.spinnerPlacement == 'end') {
-				rightSlot = <Spinner />
+				end = <Spinner />
 			} else {
-				leftSlot = <Spinner />
+				start = <Spinner />
 			}
 			if (loading.loadingText) {
-				content = loading.loadingText
+				center = loading.loadingText
 			}
 		} else {
 			if (icons.leftIcon) {
-				leftSlot = icons.leftIcon
+				start = icons.leftIcon
 			}
 			if (icons.rightIcon) {
-				rightSlot = icons.rightIcon
+				end = icons.rightIcon
 			}
 
-			content = mainContent()
+			center = mainContent()
 		}
 
-		return [leftSlot, content, rightSlot].filter(e => !!e)
+		return [start, center, end].filter(e => !!e)
 	}
 
 	const content = getContent()
@@ -113,7 +113,7 @@ const Button: ParentComponent<Kit.Button.Props> = (props) => {
 
 	return (
 		<button
-			style={themeVars}
+			style={themeVariables}
 			{...others}
 			class={classes}
 		>

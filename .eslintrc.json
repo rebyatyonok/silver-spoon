@@ -1,0 +1,45 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint",
+		"solid"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:solid/typescript",
+		"plugin:unicorn/all"
+	],
+	"rules": {
+		"indent": [
+			"error",
+			"tab"
+		],
+		"no-unused-vars": [
+			"warn",
+			{
+				"argsIgnorePattern": "^_",
+				"varsIgnorePattern": "^_",
+				"caughtErrorsIgnorePattern": "^_"
+			}
+		],
+		"comma-dangle": [
+			"error",
+			"always-multiline"
+		],
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/explicit-function-return-type": [
+			"error",
+			{
+				"allowExpressions": true
+			}
+		],
+		"unicorn/prevent-abbreviations": [
+			"error",
+			{
+				"replacements": {
+					"props": false
+				}
+			}
+		]
+	}
+}

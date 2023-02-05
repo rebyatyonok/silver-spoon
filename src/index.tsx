@@ -2,8 +2,8 @@
 import { render } from 'solid-js/web';
 
 import './index.css';
-import './assets/stripe-palette.css';
+import './assets/colors.css';
 import './assets/spacings.css';
-import App from './App';
+import App from './app';
 
-render(() => <App />, document.getElementById('root') as HTMLElement);
+render(() => <App />, document.querySelector('#root') as HTMLElement);

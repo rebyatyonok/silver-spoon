@@ -13,7 +13,7 @@ namespace Kit {
 const Spinner: Component<Kit.Spinner.Props> = () => {
 	return (
 		<svg class={css.spinner} viewBox="0 0 50 50">
-			<circle class={css.path} cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+			<circle class={css.path} cx="25" cy="25" r="20" fill="none" stroke-width="5" />
 		</svg>
 	);
 };
