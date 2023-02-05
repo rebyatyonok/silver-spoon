@@ -2,15 +2,9 @@ name: Installing deps, run linters & ts
 run-name: Installing deps, run linters & ts 🚀
 on: [push]
 jobs:
-  Installing dependencies:
+  bun_install:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Bun Runtime
-        uses: antongolub/action-setup-bun@v1
+      - uses: antongolub/action-setup-bun@v1
       - run: bun --version
-
-      - name: Installing dependencies
-      - run: bun install
-
-      - run: node_modules/.bin/eslint --help
 
