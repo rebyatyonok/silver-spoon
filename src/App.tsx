@@ -1,41 +1,52 @@
 import type { Component } from 'solid-js';
 
-import styles from "./app.module.css";
 import Button from './components/_generic/Button';
 
 const App: Component = () => {
 	return (
 		<div>
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="blue">
-				Small text node <i>another</i>
+			<h1>Sizes</h1>
+			<Button size="sm">
+				Button sm
+			</Button>
+			<Button size="md">
+				Button md
+			</Button>
+			<Button size="lg">
+				Button lg
 			</Button>
 
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="green">
-				Small text node <i>another</i>
+			<h1>Colors</h1>
+			<Button color="primary">
+				Primary
+			</Button>
+			<Button color="secondary">
+				Secondary
+			</Button>
+			<Button color="accent">
+				Accent
 			</Button>
 
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="orange">
-				Small text node <i>another</i>
+			<h1>Variants</h1>
+			<Button variant="filled">
+				Filled
+			</Button>
+			<Button variant="outline">
+				Outline
+			</Button>
+			<Button variant="ghost">
+				Ghost
+			</Button>
+			this is a<Button variant="text">
+				text button
 			</Button>
 
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="red">
-				small text node <i>another</i>
+			<h1>Mixed</h1>
+			<Button variant="outline" color="secondary">
+				Outline secondary
 			</Button>
-
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="purple">
-				small text node <i>another</i>
-			</Button>
-
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="red" disabled>
-				disabled
-			</Button>
-
-			<Button class={styles.button} onClick={(e) => console.log(e)} color="red" isLoading={true} loadingText="Loading">
-				loading
-			</Button>
-
-			<Button>
-				i
+			<Button variant="ghost" color="accent">
+				accent ghost
 			</Button>
 		</div>
 	);

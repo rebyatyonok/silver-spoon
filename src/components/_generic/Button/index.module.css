@@ -1,57 +1,97 @@
-.button {
-	--text-color: var(--white);
+/* Colors */
+.accent {
+	--base-color: var(--c-22);
+	--hover-color: var(--c-23);
+	--active-color: var(--c-24);
+	--disabled-color: var(--c-9);
+	--text-color: var(--c-1);
+}
+.primary {
+	--base-color: var(--c-16);
+	--hover-color: var(--c-17);
+	--active-color: var(--c-18);
+	--disabled-color: var(--c-9);
+	--text-color: var(--c-1);
+}
+.secondary {
+	--base-color: var(--c-10);
+	--hover-color: var(--c-11);
+	--active-color: var(--c-12);
+	--disabled-color: var(--c-9);
+	--text-color: var(--c-1);
+}
 
+.button {
 	color: var(--text-color);
+	font-weight: bold;
+	font-size: inherit;
+	font-family: inherit;
 	border: 2px solid var(--base-color);
-	border-radius: var(--spacing);
+	border-radius: 4px;
 	padding: var(--spacing) calc(var(--spacing) * 2);
 	transition: all 0.12s;
 }
-
 .button:hover {
 	cursor: pointer;
-	background: var(--hover-color);
-	filter: brightness(90%);
-	border: 2px solid var(--hover-color);
 }
-
-.button:active {
-	background: var(--active-color);
-	border: 2px solid var(--active-color);
-}
-
 .button:disabled {
-	border-color: var(--hover-color);
-	background: var(--hover-color);
+	border-color: var(--disabled-color);
+	background: var(--disabled-color);
 	cursor: not-allowed;
 }
 
+/* Sizes */
+.sm {
+	--spacing: var(--space-2);
+	font-size: 0.9em;
+}
+.md {
+	--spacing: var(--space-3);
+}
+.lg {
+	--spacing: var(--space-4);
+}
 
-/* Look */
-
+/* Variant */
 .filled {
 	background: var(--base-color);
+}
+.filled:hover {
+	background: var(--hover-color);
+	border-color: var(--hover-color);
+}
+.filled:active {
+	background: var(--active-color);
+	border-color: var(--active-color);
 }
 
 .outline {
 	background: transparent;
 	border: 2px solid var(--base-color);
+	color: var(--base-color);
+}
+.outline:hover {
+	background: var(--c-1);
+}
+.outline:active {
+	background: var(--c-2);
 }
 
 .ghost {
 	background: transparent;
-	border: none;
+	border: 2px solid transparent;
+	color: var(--base-color);
 }
-
 .ghost:hover {
-	background: var(--base-color);
+	background: var(--c-1);
+}
+.ghost:active {
+	background: var(--c-2);
 }
 
-
-/* Content */
-
-.mixed {
-	display: inline-flex;
-	gap: calc(var(--spacing) * 2);
-	align-items: center;
+.text {
+	color: inherit;
+	padding: 0;
+	border: none;
+	background: none;
 }

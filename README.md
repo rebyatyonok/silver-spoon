@@ -1,4 +1,4 @@
-# Sliver Spoon
+# Sliver Spoon -> Mono
 
 This is an opinionated ui kit for SolidJS. Here I'm researching component's APIs, component composition, playing with new technologies and do other intersting things.
 
